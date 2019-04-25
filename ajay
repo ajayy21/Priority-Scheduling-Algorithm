@@ -1,0 +1,23 @@
+
+    for(i=0;i<n;i++)
+    {
+        tt[i]=Q[i]-c_ArivalTime[i];
+        Average_Turn_Around_Time=Average_Turn_Around_Time+tt[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        WaitingTime[i]=tt[i]-c_Bursttime[i];
+        Average_Waiting_Time=Average_Waiting_Time+WaitingTime[i];
+    }
+
+     //Showing the result Here
+     
+    printf("\nPID\t ArivalT \tBurstt \t   WaitingTime \t Turn AroundTime");
+    for(i=0;i<n;i++)
+    {
+        
+        printf("\n %c\t %d \t          %d \t          %d \t            %d",P_Name[i],c_ArivalTime[i],c_Bursttime[i],WaitingTime[i],tt[i]);
+    }
+    printf("\nAverage TurnAround Time = %.1f",Average_Turn_Around_Time/n);
+    printf("\nAverage  Waiting Time   = %.1f",Average_Waiting_Time/n);
+}
